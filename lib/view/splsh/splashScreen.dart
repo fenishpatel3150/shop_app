@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 InkWell(
                   onTap: ()
                   {
-                    Navigator.pushReplacementNamed(context,'/home');
+                    Navigator.pushReplacementNamed(context,'/bar');
                   },
                   child: Padding(
                     padding: const EdgeInsets.only(top: 350, left: 15),

@@ -19,31 +19,27 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
-        title: Text('Shoes',style: TextStyle(color: Colors.white,letterSpacing: 2,fontWeight: FontWeight.bold),),
-        backgroundColor: Color(0xff1381c0),
+        leading: IconButton(
+          icon: Icon(CupertinoIcons.search,color:Colors.blue,),
+          onPressed: () {},
+        ),
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.search,color: Colors.white,),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(CupertinoIcons.shopping_cart,color: Colors.white,),
+            icon: Icon(CupertinoIcons.shopping_cart,color:Colors.blue),
             onPressed: () {},
           ),
           SizedBox(width: 15),
         ],
       ),
-      body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-        SizedBox(height: 10,),
-        Categories(),
-        SizedBox(
-          height: 20,
-        ),
+
         Expanded(
             child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: GridView.builder(
             itemCount: products.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

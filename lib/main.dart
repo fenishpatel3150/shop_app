@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_app/contoller/bottombarcontroller/controller.dart';
+import 'package:shop_app/utils/bottombar.dart';
 import 'package:shop_app/view/Home/HomePage.dart';
 import 'package:shop_app/view/splsh/splashScreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context) => BottomBarContoller(),)
+    ],child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +25,8 @@ class MyApp extends StatelessWidget {
     initialRoute: '/',
     routes: {
         '/' : (context)=>SplashScreen(),
-        '/home' : (context)=>HomeScreen(),
+
+        '/bar' : (context)=>BottomBar(),
     },
     );
   }
